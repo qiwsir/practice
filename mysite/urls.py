@@ -16,11 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+#from views import RegisterView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^blog/", include('blog.urls')),    #blog app
+    #url(r"^blog/", include('blog.urls')),    #blog app
     
-    url(r"^", include('django.contrib.auth.urls')),
-    url(r"^register/", RegisterView.as_view(), name="register")
+    #url(r"^", include('django.contrib.auth.urls')),
+    #url(r"^register/", RegisterView.as_view(), name="register")
+    url(r"^accounts/", include('accounts.urls', namespace="accounts")),   #manage user.
+
 ]
