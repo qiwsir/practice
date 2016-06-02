@@ -17,18 +17,18 @@ from django.http import Http404
 from forms import ArticlePublishForm
 
 class ArticleListView(ListView):
-    template_name = "blog_index.html"
+    template_name = "blog/blog_index.html"
 
     def get_queryset(self, **kwargs):
         object_list = Article.objects.all().order_by(F('created').desc())[:100]
-        paginator = Paginator(object_list, 2)
-        page = self.request.GET.get('page')
-        try:
-            object_list = paginator.page(page)
-        except PageNotAnInteger:
-            object_list = paginator.page(1)
-        except EmptyPage:
-            object_list = paginator.page(paginator.num_pages)
+        #paginator = Paginator(object_list, 2)
+        #page = self.request.GET.get('page')
+        #try:
+        #    object_list = paginator.page(page)
+        #except PageNotAnInteger:
+        #    object_list = paginator.page(1)
+        #except EmptyPage:
+        #    object_list = paginator.page(paginator.num_pages)
 
         return object_list
 

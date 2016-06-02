@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    "blog",
+    "social_auth",
 ]
 
 
@@ -66,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                "social_auth.context_processors.social_auth_by_type_backends",
             ],
         },
     },
@@ -128,4 +132,29 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"), )
 
+LOGIN_URL ='/accounts/login/'
+LOGIN_REDIRECT_URL = "/accounts/members/"
+LOGIN_ERROR_URL = '/accounts/login-error/'
+
+AUTHENTICATION_BACKENDS = (
+      'social_auth.backends.google.GoogleOAuth2Backend',
+      'social_auth.backends.contrib.github.GithubBackend',
+      'django.contrib.auth.backends.ModelBackend',
+
+)
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+SOCIAL_AUTH_UID_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('google', 'github')
+
+GITHUB_API_KEY = ''
+GITHUB_API_SECRET = ''
+ 
+GOOGLE_OAUTH2_CLIENT_ID = ''
+GOOGLE_OAUTH2_CLIENT_SECRET = ''
 

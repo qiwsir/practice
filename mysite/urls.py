@@ -20,10 +20,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r"^blog/", include('blog.urls')),    #blog app
+    url(r"^blog/", include('blog.urls')),    #blog app
     
-    #url(r"^", include('django.contrib.auth.urls')),
-    #url(r"^register/", RegisterView.as_view(), name="register")
     url(r"^accounts/", include('accounts.urls', namespace="accounts")),   #manage user.
+    url(r"", include('social_auth.urls')),
 
 ]

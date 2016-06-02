@@ -13,7 +13,7 @@ class ArticlePublishForm(forms.Form):
     title = forms.CharField(
         label = u"The title of Aritcle",
         max_length = 50,
-        widget = forms.TextInput(attrs={'class': "", 'placeholder': u"the title of article, add '.html' at the end."})
+        widget = forms.TextInput(attrs={'class': "", 'placeholder': u"the title of article, add '.html' at the end."}),
         )
 
     content = forms.CharField(
@@ -27,6 +27,13 @@ class ArticlePublishForm(forms.Form):
         max_length = 30,
         widget = forms.TextInput(attrs={'class': "", 'placeholder': u'the tags of article, split them by space'})
         )
+    
+    def clean_title(self):
+        title = self.cleaned_data['title']
+        if not title:
+            raise forms.ValidationError(u"标题不能为空")
+        else:
+            return title+".html"
 
     def save(self, username, article=None):
         cd = self.cleaned_data

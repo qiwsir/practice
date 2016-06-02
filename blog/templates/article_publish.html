@@ -10,7 +10,10 @@
 <div class="container">
   <div class="publish center-block">
     <form action="" method="post">{% csrf_token %}
+        <div>
+        {% if form.title.errors %}<span>{{ form.title.errors }}</span>{% endif %}
       {{ form.title }}
+  </div>
       <br/>
       {{ form.content }}
       <br/>
