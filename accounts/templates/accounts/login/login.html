@@ -1,4 +1,11 @@
+{% extends "accounts/login/login_base.html" %}
 
-<p><a href="{% url 'socialauth_begin' 'google-oauth2' %}">Login with Google</a></p>
-
-<p><a href="{% url 'socialauth_begin' 'github' %}">Login with GitHub</a></p>
+{% block content %}
+<div class="container">
+    <p>用户注册</p>
+    <p><span>username:</span><input type='text' name='username' required="required"></p>
+    <p><span>password:</span><input type="PASSWORD" name="password" required='required'></p>
+    <p><span>confirm-password:</span><input type="PASSWORD" name="password" required='required'></p>
+    <p><span>email:</span><input type="TEXT" name="email" required="required"></p>
+</div>
+{% endblock %}

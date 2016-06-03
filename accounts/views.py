@@ -12,7 +12,8 @@ class RegisterView(FormView):
     """
     register the new user
     """
-    template_name = "accounts/register.html"
+    #template_name = "accounts/register.html"
+    template_name = "accounts/login/login.html"
     form_class = RegisterForm
     success_url = reverse_lazy('blog_index')
 
