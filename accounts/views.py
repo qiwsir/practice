@@ -1,28 +1,23 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-from django.core.urlresolvers import reverse_lazy
-from django.views.generic.edit import FormView
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render
+from django.http import HttpResponse
 
-from forms import RegisterForm
+from models import *
 
+from django.views.decorators.csrf import csrf_exempt
+import json
 
-class RegisterView(FormView):
-    """
-    register the new user
-    """
-    #template_name = "accounts/register.html"
-    template_name = "accounts/register/register.html"
-    form_class = RegisterForm
-    success_url = reverse_lazy('blog_index')
+@csrf_exempt
+def register(request):
+    if request.method == "GET":
+        return render(request, "accounts/register/register.html", {})
 
-    #def form_valid(self, form):
-    #    form.save()
-    #    username = form.cleaned_data.get('username')
-    #    password = form.cleaned_data.get('password')
-    #    user = authenticate(username=username, password=password)
-    #    login(self.request, user)
-    #    return super(RegisterView, self).form_valid(form)
-
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        email = request.POST.get("email")
+        return HttpResponse(json.dumps("0"))
+        #return HttpResponse(json.dumps(username))
 

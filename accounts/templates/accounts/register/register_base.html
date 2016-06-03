@@ -22,9 +22,12 @@
 
     <!--web footer-->
     {% block footer %}
+        {% include "accounts/register/register_footer.html" %}
     {% endblock %}
     <!--end footer-->
 
-    <script src = "{% static "js/jquery.min.js"%}"></script>
+    <script src = "{% static "js/jquery.min.js" %}"></script>
+    <script src = "{% static "js/layer.js" %}"></script>
+    <script src = "{% static "js/user.js" %}"></script>
 </body>
 </html>
