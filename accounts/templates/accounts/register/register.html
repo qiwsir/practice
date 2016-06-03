@@ -1,0 +1,38 @@
+{% extends "accounts/register/register_base.html" %}
+
+{% block content %}
+<hr>
+<div class="container">
+    <h2>用户注册</h2>
+    <form class="form-horizontal" rol="form" action="" method="post">{% csrf_token %}
+        <div class="form-group {% if form.username.errors %} has-error {% endif %}">
+            <label for="username" class="col-sm-2 control-label">{{ form.username.label }}</label>
+        <div class="col-sm-10">
+            {% if form.username.errors %}<span>{{ form.username.errors }}</span>{% endif %}
+            {{ form.username }}
+            <p>{{ form.username.help_text }}</p>
+            <!--input type="text" class="form-control" id="username" name="username" required="required" placeholder="your name, required."-->
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">PASSWORD:</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" name="password" required="required" placeholder="your password, required.">
+        </div>
+    </div>
+    <div class="form-group"> 
+        <label for="confirm_password" class="col-sm-2 control-label">C_PASSWORD:</label> 
+        <div class="col-sm-10"> 
+            <input type="password" class="form-control" id="c_password" name="password" required="required" placeholder="confirm your password, required.">
+        </div>
+    </div>
+    <div class="form-group"> 
+        <label for="confirm_password" class="col-sm-2 control-label">EMAIL:</label> 
+        <div class="col-sm-10"> 
+            <input type="text" class="form-control" id="email" name="email" required="required" placeholder="your email, required.">
+        </div>
+    </div>
+    <button class="btn btn-block btn-primary" type="submit">SIGN UP</button>
+</form>
+</div>
+{% endblock %}

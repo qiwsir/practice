@@ -1,39 +1,50 @@
-
 <div>
     {% if form.non_field_errors %}
     <div>
-        {{ form.non_field_errors }}
+        {{ form.non_field_errors  }}
     </div>
     {% endif %}
     <div>
     <p>注册</p>
     <form action="" method="post">{% csrf_token %}
         <div class="form-group {% if form.username.errors %} has-error {% endif %}">
-            <label for="">{{ form.username.label }}</label>
-            {% if form.username.errors %}<span>{{ form.username.errors }}</span>{% endif %}
-            {{ form.username }}
-            <p>{{ form.username.help_text }}</p>
+            <label for="">{{ form.username.label  }}</label>
+            {% if form.username.errors %}<span>{{ form.username.errors  }}</span>{% endif %}
+            {{ form.username  }}
+            <p>{{ form.username.help_text  }}</p>
         </div>
         <div class="form-group {% if form.email.errors %} has-error {% endif %}">
-            <label for="">{{ form.email.label }}</label>
-            {% if form.email.errors %}<span>{{ form.email.errors }}</span>{% endif %}
-            {{ form.email }}
-            <p>{{ form.email.help_text }}</p>
+            <label for="">{{ form.email.label  }}</label>
+            {% if form.email.errors %}<span>{{ form.email.errors  }}</span>{% endif %}
+            {{ form.email  }}
+            <p>{{ form.email.help_text  }}</p>
         </div>
+
         <div class="form-group {% if form.password.errors %} has-error {% endif %}">
-            <label for="">{{ form.password.label }}</label>
-            {% if form.password.errors %}<span>{{ form.password.errors }}</span>{% endif %}
-            {{ form.password }}
-            <p>{{ form.password.help_text }}</p>
+            <label for="">{{ form.password.label  }}</label>
+            {% if form.password.errors %}<span>{{ form.password.errors  }}</span>{% endif %}
+            {{ form.password  }}
+            <p>{{ form.password.help_text  }}</p>
         </div>
+        
         <div class="form-group {% if form.confirm_password.errors %} has-error {% endif %}">
-            <label for="">{{ form.confirm_password.label }}</label>
-            {% if form.confirm_password.errors %}<span>{{ form.confirm_password.errors }}</span>{% endif %}
-            {{ form.confirm_password }}
-            <p>{{ form.confirm_password.help_text }}</p>
+        
+            <label for="">{{ form.confirm_password.label  }}</label>
+            
+            {% if form.confirm_password.errors %}<span>{{ form.confirm_password.errors  }}</span>{% endif %}
+            
+            {{ form.confirm_password  }}
+            
+            <p>{{ form.confirm_password.help_text  }}</p>
+            
         </div>
+        
         <button>注 册</button>
-        </div>
-    </form>
+        
     </div>
+    
+</form>
+
+</div>
+
 </div>

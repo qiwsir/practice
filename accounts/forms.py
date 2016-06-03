@@ -5,10 +5,10 @@ from django import forms
 
 class RegisterForm(forms.Form):
     username = forms.CharField(
-        label = u'username',
-        help_text = u'the username to be login.',
+        label = u'USERNAME:',
+        help_text = u'input your username, required.',
         max_length = 20,
-        initial = "",
+        initial = "your username.",
         widget = forms.TextInput(attrs={'class':'form-control'}),
         )
 

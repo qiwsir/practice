@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css"%}">
+</head>
+<body>
+    <!--web header-->
+    {% block top %}
+        {% include "accounts/register/register_top.html" %}
+    {% endblock %}
+    <!--end header-->
+    
+    <!--web content-->
+    {% block content %}
+    <p>This is a web</p>
+    {% endblock %}
+    <!--end content-->
+
+    <!--web footer-->
+    {% block footer %}
+    {% endblock %}
+    <!--end footer-->
+
+    <script src = "{% static "js/jquery.min.js"%}"></script>
+</body>
+</html>
