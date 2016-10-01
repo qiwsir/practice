@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"-->
+  <link rel="stylesheet" href="./statics/css/normalize.css">
+  <link rel="stylesheet" href="./statics/css/bootstrap.css">
+  <link rel="stylesheet" href="./statics/css/mansory-style.css">
+</head>
+<body>
+<div class="container">
+  <div id="my-gallery-container">
+    <div class="fluid-item h200">
+      <img src="./statics/images/one.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/two.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/three.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/four.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/five.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/six.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/seven.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/eight.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/nine.jpg">
+    </div>
+    <div class="fluid-item h200">
+      <img src="./statics/images/ten.jpg">
+    </div>
+  </div>
+</div>
+<script src="./statics/js/jquery.js"></script>
+<script src="./statics/js/bootstrap.min.js"></script>
+<script src="./statics/js/mp.mansory.min.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $("#my-gallery-container").mpmansory({
+      childrenClass: "fluid-item", //default is a div
+      columnClasses: "fluid-padding", //add classes to items
+      breakpoints:{
+        lg: 3,
+        md: 4,
+        sm: 6,
+        xs: 12,
+      },
+      distributeBy: { order:false, height:false, attr:'data-order', attrOrder:'desc'},
+      onload: function(items){
+        //make somthin with items
+      }
+    });
+  });
+
+</script>
+</body>
+</html>
