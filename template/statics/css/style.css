@@ -1,8 +1,24 @@
-
+@charset "utf-8";
+.action {
+	width: 400px;
+	height: 20px;
+	margin: 5px 0;
+}
+.cropped {
+	position: absolute;
+	right: -90px;
+	top: 0;
+	width: 150px;
+	border: 1px #ddd solid;
+	height: 300px;
+	padding: 4px;
+	box-shadow: 0px 0px 12px #ddd;
+	text-align: center;
+}
 .imageBox {
 	position: relative;
-	height: 400px;
-	width: 400px;
+	height: 300px;
+	width: 300px;
 	border: 1px solid #aaa;
 	background: #fff;
 	overflow: hidden;
@@ -35,13 +51,6 @@
   color: #2F2A2A;
   background: rgba(213, 211, 211, 0.7);
 }
-
-.action {
-	width: 400px;
-	height: 30px;
-	margin: 10px 0;
-}
-
 .Btnsty_peyton{ float: right;
    width: 66px;
   display: inline-block;
@@ -56,9 +65,8 @@
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0px 0px 5px #B0B0B0;
-  border: 0px #fff solid;
-}
-
+  border: 0px #fff solid;}
+/*选择文件上传*/
 .new-contentarea {
 	width: 165px;
 	overflow:hidden;
